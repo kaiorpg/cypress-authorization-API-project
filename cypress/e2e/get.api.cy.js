@@ -107,6 +107,7 @@ describe('Update Booking', () => {
             }
         }).then((response_without_token) => {
             expect(response_without_token.status).to.eq(403)
+            expect(response_without_token.statusText).to.eq('Forbidden')
             console.log('status code: ' + response_without_token.status)
         })
     })
@@ -134,6 +135,8 @@ describe('Update Booking', () => {
             }
         }).then((response) => {
             expect(response.status).to.eq(403)
+            expect(response.statusText).to.eq('Forbidden')
+            console.log('status code: ' + response.status)
         })
     })
 })
